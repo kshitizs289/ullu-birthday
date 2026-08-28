@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>for my wifeyy 🌙</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night1:#0B0F2E;
+    --night2:#171B4A;
+    --night3:#2B2166;
+    --gold:#F4C86B;
+    --gold-soft:#FFE3A8;
+    --flame:#FF9B4A;
+    --paper:#FFF7E8;
+    --mist:#B9B4E0;
+    --rose:#F0899B;
+  }
+
+  *{ box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+
+  html,body{
+    height:100%; margin:0; overflow:hidden;
+    font-family:'Quicksand', sans-serif; color: var(--paper);
+    background: radial-gradient(ellipse at 50% 0%, var(--night3) 0%, var(--night2) 45%, var(--night1) 100%);
+    user-select:none;
+  }
+
+  .stage{ position:relative; width:100%; height:100%; overflow:hidden; }
+
+  /* ---------- stars ---------- */
+  .stars{ position:absolute; inset:0; z-index:1; pointer-events:none; }
+  .star{ position:absolute; background: var(--gold-soft); border-radius:50%; animation: twinkle ease-in-out infinite; }
+  @keyframes twinkle{ 0%,100%{ opacity:.25; transform:scale(1); } 50%{ opacity:1; transform:scale(1.4); } }
+
+  .shooting{ position:absolute; width:2px; height:2px; background:transparent; z-index:2; }
+  .shooting::before{
+    content:''; position:absolute; width:90px; height:1.5px;
+    background: linear-gradient(90deg, var(--gold-soft), transparent);
+    transform: rotate(-32deg); left:0; top:0;
+  }
+  .shooting.run{ animation: shoot 1.4s ease-in forwards; }
+  @keyframes shoot{ 0%{ transform: translate(0,0); opacity:1; } 100%{ transform: translate(-260px, 160px); opacity:0; } }
+
+  .moon{ position:absolute; top:6%; right:10%; width:64px; height:64px; border-radius:50%;
+    background: radial-gradient(circle at 35% 35%, #FFF6DC, var(--gold) 70%);
+    box-shadow: 0 0 50px 14px rgba(244,200,107,0.35); z-index:1; opacity:.9;
+    animation: moonBreathe 5s ease-in-out infinite;
+  }
+  @keyframes moonBreathe{ 0%,100%{ transform:scale(1); opacity:.85; } 50%{ transform:scale(1.06); opacity:1; } }
+
+  /* ---------- diyas along the base ---------- */
+  .diya-row{ position:absolute; bottom:0; left:0; right:0; height:70px; display:flex; align-items:flex-end; justify-content:center; gap:clamp(10px,3vw,26px); z-index:3; pointer-events:none; padding-bottom:10px; }
+  .diya{ width:20px; height:14px; position:relative; opacity:.28; transition: opacity .6s ease; }
+  .diya.lit{ opacity:1; }
+  .diya-bowl{ width:100%; height:100%; background: linear-gradient(180deg, #7A4A22, #4A2A12); border-radius: 0 0 50% 50% / 0 0 70% 70%; }
+  .diya-flame{ position:absolute; bottom:11px; left:50%; transform: translateX(-50%); width:7px; height:11px; border-radius:50% 50% 50% 50%/60% 60% 40% 40%; background: radial-gradient(circle at 50% 70%, var(--gold-soft), var(--flame) 70%); opacity:0; filter: blur(0.2px); }
+  .diya.lit .diya-flame{ opacity:1; animation: diyaFlicker 1.3s ease-in-out infinite alternate; }
+  @keyframes diyaFlicker{ 0%{ transform: translateX(-50%) scaleY(1) rotate(-3deg);} 50%{ transform: translateX(-50%) scaleY(1.15) rotate(3deg);} 100%{ transform: translateX(-50%) scaleY(0.92) rotate(-2deg);} }
+  .diya.lit .diya-bowl{ box-shadow: 0 0 16px 4px rgba(255,155,74,0.5); }
+
+  /* ---------- scenes ---------- */
+  .scene{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:clamp(16px,3.6vw,28px); padding: 30px 24px 90px; z-index:6;
+    transition: opacity .7s ease, filter .7s ease;
+  }
+  .scene.hidden{ opacity:0; pointer-events:none; filter: blur(6px); }
+
+  .eyebrow{ font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; letter-spacing:.08em; font-size: clamp(13px,3.4vw,15px); color: var(--mist); text-align:center; }
+
+  .locket{ position:relative; width: clamp(120px,30vw,160px); height: clamp(120px,30vw,160px); transition: transform .8s ease, opacity .6s ease; }
+  .locket svg{ width:100%; height:100%; filter: drop-shadow(0 0 22px rgba(244,200,107,0.35)); }
+  .locket-wrap.opening .locket{ transform: scale(1.08) rotate(3deg); }
+  .locket-wrap.flyaway .locket{ transform: translateY(-40px) scale(0.7); opacity:0; }
+
+  .title-script{ font-family:'Dancing Script', cursive; font-weight:700; font-size: clamp(30px,8vw,52px); text-align:center; color: var(--gold-soft); line-height:1.25; text-shadow: 0 0 24px rgba(244,200,107,0.35); }
+  .subtitle{ font-family:'Cormorant Garamond', serif; font-size: clamp(15px,4vw,19px); color: var(--mist); text-align:center; max-width:420px; }
+
+  .btn{
+    font-family:'Cormorant Garamond', serif; font-weight:600; font-size:18px; letter-spacing:.04em;
+    border:1px solid rgba(244,200,107,0.5); background: rgba(244,200,107,0.08); color: var(--gold-soft);
+    border-radius:999px; padding:13px 34px; cursor:pointer; backdrop-filter: blur(2px);
+    transition: transform .18s ease, background .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{ background: rgba(244,200,107,0.18); box-shadow: 0 0 24px rgba(244,200,107,0.25); transform: translateY(-2px); }
+  .btn:active{ transform: translateY(0) scale(0.97); }
+  .btn:focus-visible{ outline:2px solid var(--gold-soft); outline-offset:3px; }
+
+  /* ---------- heartbeat glow living behind the letter ---------- */
+  .heartbeat-glow{
+    position:absolute; left:50%; top:50%; width:340px; height:340px; margin:-170px 0 0 -170px;
+    border-radius:50%; background: radial-gradient(circle, rgba(240,137,155,0.10), transparent 70%);
+    z-index:0; pointer-events:none; animation: heartbeat 1.15s ease-in-out infinite;
+  }
+  @keyframes heartbeat{
+    0%, 100%{ transform: scale(1); opacity:.55; }
+    14%{ transform: scale(1.09); opacity:.85; }
+    28%{ transform: scale(1); opacity:.55; }
+    42%{ transform: scale(1.05); opacity:.7; }
+    70%{ transform: scale(1); opacity:.55; }
+  }
+
+  /* ---------- clock interstitial: why the gift is a little late ---------- */
+  .clock-wrap{ position:relative; width: clamp(110px,26vw,140px); height: clamp(110px,26vw,140px); opacity:0; }
+  .clock-wrap.show{ animation: fadeIn 1s ease .1s forwards; }
+  .clock-wrap svg{ width:100%; height:100%; filter: drop-shadow(0 0 18px rgba(244,200,107,0.3)); }
+  .hand{ transform-origin: 70px 70px; }
+  .hand-hour{ transform: rotate(255deg); }
+  .hand-min{ transform: rotate(60deg); }
+  .clock-wrap.show .hand-hour{ animation: hourSweep 3.4s cubic-bezier(.45,0,.2,1) forwards; }
+  .clock-wrap.show .hand-min{ animation: minSweep 3.4s cubic-bezier(.45,0,.2,1) forwards; }
+  @keyframes hourSweep{ 0%{ transform: rotate(255deg); } 100%{ transform: rotate(360deg); } }
+  @keyframes minSweep{ 0%{ transform: rotate(60deg); } 100%{ transform: rotate(760deg); } }
+  .clock-caption{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size: clamp(15px,4vw,19px); color: var(--mist); text-align:center; max-width:380px; opacity:0; line-height:1.7; }
+  .clock-caption.show{ animation: fadeIn .9s ease forwards; }
+  .clock-caption.delay1{ animation-delay: 2.4s; }
+  .clock-caption.delay2{ animation-delay: 3.6s; }
+  .clock-btn-wrap{ opacity:0; animation: fadeIn .9s ease 4.8s forwards; }
+
+  /* ---------- letter page ---------- */
+  .progress-wrap{ position:absolute; top:0; left:0; right:0; padding:16px 20px 0; z-index:20; }
+  .progress-track{ width:100%; height:2px; background: rgba(244,200,107,0.15); }
+  .progress-fill{ height:100%; width:0%; background: var(--gold-soft); transition: width .5s ease; }
+
+  .page{ position:relative; max-width:640px; width:100%; padding: 0 12px; display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .page-mark{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:13px; color: var(--mist); opacity:.65; }
+  .page-text{
+    font-family:'Cormorant Garamond', serif; font-weight:500; font-size: clamp(20px, 5.2vw, 30px);
+    line-height:1.6; text-align:center; color: var(--paper); min-height: 2.4em;
+  }
+  .page-text .accent{ color: var(--gold-soft); font-style:italic; }
+  .page-text .accent2{ color: var(--rose); font-style:italic; }
+  .cursor{ display:inline-block; width:2px; height:1em; background: var(--gold-soft); margin-left:2px; vertical-align:-0.15em; animation: blink 0.9s steps(1) infinite; }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .hint{ position:absolute; bottom:80px; left:0; right:0; text-align:center; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:13px; color: var(--mist); opacity:0; z-index:10; }
+  .hint.show{ animation: fadeIn .6s ease .3s forwards; }
+  @keyframes fadeIn{ to{ opacity:.6; } }
+
+  /* ---------- final scene ---------- */
+  .final-wrap{ display:flex; flex-direction:column; align-items:center; gap:18px; max-width:600px; }
+  .final-heart{ font-size: clamp(38px,10vw,56px); opacity:0; animation: heartIn .8s cubic-bezier(.34,1.56,.64,1) forwards; }
+  @keyframes heartIn{ 0%{ opacity:0; transform: scale(.4); } 60%{ transform: scale(1.15); } 100%{ opacity:1; transform: scale(1); } }
+  .final-title{ font-family:'Dancing Script', cursive; font-weight:700; font-size: clamp(34px,9vw,58px); color: var(--gold-soft); text-align:center; text-shadow: 0 0 26px rgba(244,200,107,0.4); opacity:0; }
+  .final-title.show{ animation: fadeIn .8s ease .2s forwards; }
+  .final-body{ font-family:'Cormorant Garamond', serif; font-size: clamp(16px,4vw,20px); color: var(--paper); text-align:center; line-height:1.85; opacity:0; }
+  .final-body.show{ animation: fadeIn .8s ease .5s forwards; }
+  .final-sign{ font-family:'Dancing Script', cursive; font-weight:700; font-size: clamp(20px,5vw,26px); color: var(--rose); opacity:0; }
+  .final-sign.show{ animation: fadeIn .8s ease .85s forwards; }
+  .final-footnote{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size: clamp(12px,3.2vw,14px); color: var(--mist); opacity:0; }
+  .final-footnote.show{ animation: fadeIn 1s ease 1.2s forwards; }
+  .floating-heart{ position:absolute; pointer-events:none; z-index:7; transition: transform 3.4s ease-out, opacity 3.4s ease-out; }
+
+  .glow-ring{ position:absolute; width:280px; height:280px; border-radius:50%; background: radial-gradient(circle, rgba(244,200,107,0.18), transparent 70%); z-index:1; pointer-events:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    .star, .shooting, .diya-flame, .cursor, .locket, .final-heart, .final-title, .final-body, .final-sign, .hint{
+      animation:none !important; transition:none !important; opacity:1 !important; transform:none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+  <div class="stars" id="stars"></div>
+  <div class="moon"></div>
+  <div class="diya-row" id="diyaRow"></div>
+
+  <!-- ============ COVER ============ -->
+  <section class="scene" id="cover">
+    <div class="eyebrow">a letter, written under the same sky you're under</div>
+
+    <div class="locket-wrap" id="locketWrap">
+      <div class="locket">
+        <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="lg" cx="50%" cy="40%" r="65%">
+              <stop offset="0%" stop-color="#FFE3A8"/>
+              <stop offset="100%" stop-color="#F4C86B"/>
+            </radialGradient>
+          </defs>
+          <circle cx="70" cy="70" r="52" fill="none" stroke="url(#lg)" stroke-width="3"/>
+          <circle cx="70" cy="70" r="40" fill="none" stroke="url(#lg)" stroke-width="1.5" opacity="0.6"/>
+          <path d="M70 46 C58 34 40 40 40 58 C40 76 70 98 70 98 C70 98 100 76 100 58 C100 40 82 34 70 46 Z" fill="url(#lg)" opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+
+    <h1 class="title-script">for my wifeyy</h1>
+    <p class="subtitle">close everything else for a minute. this one's just for you.</p>
+
+    <div>
+      <button class="btn" id="openBtn">read it</button>
+    </div>
+  </section>
+
+  <!-- ============ CLOCK INTERSTITIAL ============ -->
+  <section class="scene hidden" id="clockScene">
+    <div class="heartbeat-glow"></div>
+    <div class="clock-wrap" id="clockWrap">
+      <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="70" cy="70" r="62" fill="none" stroke="#F4C86B" stroke-width="1.5" opacity="0.45"/>
+        <circle cx="70" cy="70" r="4" fill="#FFE3A8"/>
+        <line class="hand hand-hour" x1="70" y1="70" x2="70" y2="42" stroke="#FFE3A8" stroke-width="4" stroke-linecap="round"/>
+        <line class="hand hand-min" x1="70" y1="70" x2="70" y2="26" stroke="#F4C86B" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p class="clock-caption show delay1">this was supposed to arrive at midnight.</p>
+    <p class="clock-caption show delay2">but you looked at me, sick and half-asleep, and told me to rest instead — so it waited, the way only something that loves you would.</p>
+    <div class="clock-btn-wrap">
+      <button class="btn" id="clockNextBtn">so here it is, a little late</button>
+    </div>
+  </section>
+
+  <!-- ============ LETTER SCENE ============ -->
+  <section class="scene hidden" id="letterScene">
+    <div class="heartbeat-glow"></div>
+    <div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+    <div class="page">
+      <div class="page-mark" id="pageMark">page 1</div>
+      <div class="page-text" id="pageText"></div>
+    </div>
+    <div class="hint" id="hint">tap to keep reading</div>
+  </section>
+</div>
+
+<script>
+(function(){
+  // ===================== LETTER CONTENT =====================
+  // Each entry is typed out letter-by-letter, like handwriting.
+  const pages = [
+    "My wifeyy…",
+    "before the day gets busy with everyone else's wishes —",
+    "I wanted mine to reach you first, quietly, like this.",
+    "I still remember when you were someone I was just <span class=\"accent\">getting to know</span>.",
+    "and somehow, without either of us really noticing it happen —",
+    "you became the person I built my whole life's plans around.",
+    "we found each other through the same faith, the same Laddu ji,",
+    "the same quiet mornings and the same silly, endless conversations.",
+    "and every year from here — I don't just get to wish you happy birthday.",
+    "I get to <span class=\"accent2\">celebrate you</span>, as mine, for the rest of ours.",
+    "so today, close your eyes for me.",
+    "let every diya on this little sky be a year I get to love you.",
+    "happy birthday, wifeyy."
+  ];
+
+  // ===================== STARFIELD =====================
+  const starsEl = document.getElementById('stars');
+  const starCount = window.innerWidth < 600 ? 40 : 65;
+  for(let i=0;i<starCount;i++){
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = 1 + Math.random()*2.2;
+    s.style.width = size+'px';
+    s.style.height = size+'px';
+    s.style.left = (Math.random()*100)+'%';
+    s.style.top = (Math.random()*70)+'%';
+    s.style.animationDuration = (2 + Math.random()*3)+'s';
+    s.style.animationDelay = (-Math.random()*4)+'s';
+    starsEl.appendChild(s);
+  }
+
+  function shootingStar(){
+    const s = document.createElement('div');
+    s.className = 'shooting';
+    s.style.left = (55 + Math.random()*35)+'%';
+    s.style.top = (8 + Math.random()*18)+'%';
+    starsEl.appendChild(s);
+    requestAnimationFrame(() => s.classList.add('run'));
+    setTimeout(() => s.remove(), 1600);
+  }
+  let shootTimer = setInterval(shootingStar, 4200);
+
+  // ===================== DIYA ROW =====================
+  const diyaRow = document.getElementById('diyaRow');
+  const totalDiyas = 13;
+  for(let i=0;i<totalDiyas;i++){
+    const d = document.createElement('div');
+    d.className = 'diya';
+    d.innerHTML = '<div class="diya-flame"></div><div class="diya-bowl"></div>';
+    diyaRow.appendChild(d);
+  }
+  const diyaEls = Array.from(diyaRow.children);
+  function lightDiya(i){
+    if(diyaEls[i]) diyaEls[i].classList.add('lit');
+  }
+
+  // ===================== OPEN COVER =====================
+  const openBtn = document.getElementById('openBtn');
+  const locketWrap = document.getElementById('locketWrap');
+  const cover = document.getElementById('cover');
+  const clockScene = document.getElementById('clockScene');
+  const clockWrap = document.getElementById('clockWrap');
+  const clockNextBtn = document.getElementById('clockNextBtn');
+  const letterScene = document.getElementById('letterScene');
+  let opened = false;
+
+  openBtn.addEventListener('click', () => {
+    if(opened) return;
+    opened = true;
+    locketWrap.classList.add('opening');
+    setTimeout(() => locketWrap.classList.add('flyaway'), 450);
+    setTimeout(() => {
+      cover.classList.add('hidden');
+      clockScene.classList.remove('hidden');
+      clockWrap.classList.add('show');
+    }, 950);
+  });
+
+  clockNextBtn.addEventListener('click', () => {
+    clockScene.classList.add('hidden');
+    letterScene.classList.remove('hidden');
+    renderPage();
+  });
+
+  // ===================== TYPEWRITER RENDER =====================
+  const pageText = document.getElementById('pageText');
+  const pageMark = document.getElementById('pageMark');
+  const progressFill = document.getElementById('progressFill');
+  const hint = document.getElementById('hint');
+  const total = pages.length + 1; // +1 final scene
+  let index = 0;
+  let typing = false;
+  let typeTimer = null;
+
+  function typeLine(html, onDone){
+    const tokens = html.match(/<[^>]+>|[^<]/g) || [];
+    let i = 0;
+    pageText.innerHTML = '<span class="cursor"></span>';
+    typing = true;
+    hint.classList.remove('show');
+
+    function step(){
+      if(i >= tokens.length){
+        typing = false;
+        pageText.querySelector('.cursor')?.remove();
+        hint.classList.add('show');
+        if(onDone) onDone();
+        return;
+      }
+      const chunk = tokens[i];
+      i++;
+      const cursor = pageText.querySelector('.cursor');
+      if(chunk.startsWith('<')){
+        const temp = document.createElement('span');
+        temp.innerHTML = chunk;
+        pageText.insertBefore(temp.firstChild || document.createTextNode(''), cursor);
+      } else {
+        pageText.insertBefore(document.createTextNode(chunk), cursor);
+      }
+      typeTimer = setTimeout(step, 34);
+    }
+    step();
+  }
+
+  function renderPage(){
+    progressFill.style.width = (((index+1)/total)*100) + '%';
+
+    if(index < pages.length){
+      pageMark.textContent = `page ${index+1} of ${pages.length}`;
+      lightDiya(index);
+      typeLine(pages[index]);
+    } else {
+      renderFinal();
+    }
+  }
+
+  function next(){
+    if(typing){
+      clearTimeout(typeTimer);
+      pageText.innerHTML = pages[index];
+      typing = false;
+      hint.classList.add('show');
+      return;
+    }
+    if(index >= pages.length) return;
+    index++;
+    renderPage();
+  }
+
+  letterScene.addEventListener('click', (e) => {
+    if(e.target.closest('.final-wrap')) return;
+    next();
+  });
+
+  // ===================== FINAL SCENE =====================
+  function renderFinal(){
+    clearInterval(shootTimer);
+    const page = document.querySelector('.page');
+    const progressWrap = document.querySelector('.progress-wrap');
+    hint.classList.remove('show');
+    page.style.display = 'none';
+    progressWrap.style.display = 'none';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'final-wrap';
+    wrap.innerHTML = `
+      <div class="glow-ring"></div>
+      <div class="final-heart">🪷</div>
+      <div class="final-title" id="finalTitle">Happy Birthday, Wifeyy</div>
+      <div class="final-body" id="finalBody">
+        may Krishna ji keep this year soft on you — full of laughter, sound sleep, and every small joy you never have to ask for twice. and may I get to be the one standing next to you for all of it, wifeyy, today and every year after.
+      </div>
+      <div class="final-sign" id="finalSign">forever yours 🌙</div>
+      <div class="final-footnote" id="finalFootnote">late by the clock. never late by the heart.</div>
+    `;
+    letterScene.appendChild(wrap);
+    requestAnimationFrame(() => {
+      document.getElementById('finalTitle').classList.add('show');
+      document.getElementById('finalBody').classList.add('show');
+      document.getElementById('finalSign').classList.add('show');
+      document.getElementById('finalFootnote').classList.add('show');
+    });
+
+    diyaEls.forEach(d => d.classList.add('lit'));
+    let bursts = 0;
+    const burstTimer = setInterval(() => {
+      shootingStar();
+      floatHeart();
+      bursts++;
+      if(bursts > 4) clearInterval(burstTimer);
+    }, 500);
+  }
+
+  function floatHeart(){
+    const h = document.createElement('div');
+    h.className = 'floating-heart';
+    h.textContent = '♥';
+    h.style.left = (28 + Math.random()*44) + '%';
+    h.style.bottom = '70px';
+    h.style.color = 'var(--rose)';
+    h.style.fontSize = (13 + Math.random()*9) + 'px';
+    h.style.opacity = '0.85';
+    letterScene.appendChild(h);
+    requestAnimationFrame(() => {
+      h.style.transform = `translateY(-${170 + Math.random()*110}px) translateX(${Math.round(Math.random()*50-25)}px)`;
+      h.style.opacity = '0';
+    });
+    setTimeout(() => h.remove(), 3500);
+  }
+
+})();
+</script>
+</body>
+</html>
