@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
-<title>for ullu aarohi shrivastav ji 🦉</title>
+<title>उल्लू आरोही श्रीवास्तव जी के लिए 🦉</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
     --n1:#150C2E; --n2:#2A1A5C; --n3:#5A3AA8;
@@ -13,7 +13,7 @@
     --paper:#FBF7FF; --mist:#CDBFF0;
   }
   *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html,body{ height:100%; margin:0; overflow:hidden; font-family:'Quicksand',sans-serif; color:var(--paper);
+  html,body{ height:100%; margin:0; overflow:hidden; font-family:'Tiro Devanagari Hindi',serif; color:var(--paper);
     background:radial-gradient(ellipse at 50% 0%, var(--n3) 0%, var(--n2) 45%, var(--n1) 100%); user-select:none; }
   .stage{ position:relative; width:100%; height:100%; overflow:hidden; }
 
@@ -56,7 +56,7 @@
     gap:clamp(16px,3.6vw,26px); padding:30px 24px 90px; z-index:6; transition:opacity .7s, filter .7s; }
   .scene.hidden{ opacity:0; pointer-events:none; filter:blur(8px); }
 
-  .eyebrow{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; letter-spacing:.08em; font-size:clamp(13px,3.4vw,15px); color:var(--mist); text-align:center; }
+  .eyebrow{ font-family:'Tiro Devanagari Hindi',serif; font-style:italic; font-weight:500; letter-spacing:0; font-size:clamp(13px,3.4vw,15px); color:var(--mist); text-align:center; }
 
   /* owl orb */
   .orb-wrap{ transition:transform .8s ease, opacity .6s ease; }
@@ -73,13 +73,13 @@
   .orb-wrap.opening{ transform:scale(1.1) rotate(4deg); }
   .orb-wrap.flyaway{ transform:translateY(-50px) scale(.6); opacity:0; }
 
-  .title-script{ font-family:'Dancing Script',cursive; font-weight:700; font-size:clamp(30px,8.4vw,54px); text-align:center; line-height:1.25; margin:0;
+  .title-script{ font-family:'Kalam','Tiro Devanagari Hindi',cursive; font-weight:700; font-size:clamp(30px,8.4vw,54px); text-align:center; line-height:1.4; margin:0;
     background:linear-gradient(90deg,#fff,var(--lav),var(--pink),#fff); background-size:250% 100%;
     -webkit-background-clip:text; background-clip:text; color:transparent; animation:shimmer 5s linear infinite; filter:drop-shadow(0 0 18px rgba(201,182,255,.45)); }
   @keyframes shimmer{ to{ background-position:-250% 0; } }
-  .subtitle{ font-family:'Cormorant Garamond',serif; font-size:clamp(15px,4vw,19px); color:var(--mist); text-align:center; max-width:420px; margin:0; }
+  .subtitle{ font-family:'Tiro Devanagari Hindi',serif; font-size:clamp(15px,4vw,19px); color:var(--mist); text-align:center; max-width:420px; margin:0; }
 
-  .btn{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:18px; letter-spacing:.05em; color:#fff;
+  .btn{ font-family:'Tiro Devanagari Hindi',serif; font-weight:600; font-size:18px; letter-spacing:0; color:#fff;
     border:1px solid rgba(201,182,255,.6); background:linear-gradient(135deg,rgba(138,92,255,.45),rgba(255,138,216,.3));
     border-radius:999px; padding:13px 36px; cursor:pointer; backdrop-filter:blur(6px); box-shadow:0 0 26px rgba(138,92,255,.4);
     transition:transform .18s, box-shadow .2s; animation:pulse 2.6s ease-in-out infinite; }
@@ -101,7 +101,7 @@
   .clock-wrap.show .hand-hour{ animation:hs 3.4s cubic-bezier(.45,0,.2,1) forwards; }
   .clock-wrap.show .hand-min{ animation:ms 3.4s cubic-bezier(.45,0,.2,1) forwards; }
   @keyframes hs{ to{ transform:rotate(360deg);} } @keyframes ms{ to{ transform:rotate(760deg);} }
-  .clock-caption{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(15px,4vw,19px); color:var(--mist); text-align:center; max-width:380px; opacity:0; line-height:1.7; margin:0; }
+  .clock-caption{ font-family:'Tiro Devanagari Hindi',serif; font-style:italic; font-size:clamp(15px,4vw,19px); color:var(--mist); text-align:center; max-width:380px; opacity:0; line-height:1.7; margin:0; }
   .clock-caption.show{ animation:fadeIn .9s ease forwards; }
   .d1{ animation-delay:2.4s !important; } .d2{ animation-delay:3.6s !important; }
   .clock-btn-wrap{ opacity:0; animation:fadeIn .9s ease 4.8s forwards; }
@@ -113,13 +113,13 @@
   .page{ position:relative; max-width:640px; width:100%; padding:26px 22px; display:flex; flex-direction:column; align-items:center; gap:14px;
     background:rgba(255,255,255,.06); border:1px solid rgba(201,182,255,.25); border-radius:26px; backdrop-filter:blur(14px);
     box-shadow:0 10px 60px rgba(90,58,168,.45), inset 0 0 30px rgba(255,255,255,.04); }
-  .page-mark{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:13px; color:var(--mist); opacity:.7; }
-  .page-text{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(20px,5.2vw,30px); line-height:1.6; text-align:center; min-height:3.2em; }
+  .page-mark{ font-family:'Tiro Devanagari Hindi',serif; font-style:italic; font-size:13px; color:var(--mist); opacity:.7; }
+  .page-text{ font-family:'Tiro Devanagari Hindi',serif; font-weight:600; font-size:clamp(20px,5.2vw,30px); line-height:1.75; text-align:center; min-height:3.6em; }
   .page-text .accent{ color:var(--lav); font-style:italic; }
   .page-text .accent2{ color:var(--pink); font-style:italic; }
   .cursor{ display:inline-block; width:2px; height:1em; background:var(--lav-soft); margin-left:2px; vertical-align:-.15em; animation:blink .9s steps(1) infinite; }
   @keyframes blink{ 50%{ opacity:0; } }
-  .hint{ position:absolute; bottom:80px; left:0; right:0; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:13px; color:var(--mist); opacity:0; z-index:10; }
+  .hint{ position:absolute; bottom:80px; left:0; right:0; text-align:center; font-family:'Tiro Devanagari Hindi',serif; font-style:italic; font-size:13px; color:var(--mist); opacity:0; z-index:10; }
   .hint.show{ animation:fadeIn .6s ease .3s forwards; }
   @keyframes fadeIn{ to{ opacity:.75; } }
 
@@ -127,13 +127,13 @@
   .final-wrap{ display:flex; flex-direction:column; align-items:center; gap:16px; max-width:600px; position:relative; z-index:5; }
   .final-owl{ font-size:clamp(46px,12vw,68px); opacity:0; animation:pop .8s cubic-bezier(.34,1.56,.64,1) forwards; filter:drop-shadow(0 0 20px rgba(255,158,219,.7)); }
   @keyframes pop{ 0%{ opacity:0; transform:scale(.4) rotate(-15deg);} 60%{ transform:scale(1.18) rotate(6deg);} 100%{ opacity:1; transform:scale(1);} }
-  .final-title{ font-family:'Dancing Script',cursive; font-weight:700; font-size:clamp(32px,9vw,56px); text-align:center; line-height:1.2; opacity:0;
+  .final-title{ font-family:'Kalam','Tiro Devanagari Hindi',cursive; font-weight:700; font-size:clamp(32px,9vw,56px); text-align:center; line-height:1.5; opacity:0;
     background:linear-gradient(90deg,#fff,var(--lav),var(--pink),#fff); background-size:250% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 22px rgba(201,182,255,.5)); }
   .final-title.show{ animation:fadeFull .8s ease .2s forwards, shimmer 5s linear infinite; }
   .final-body,.final-sign,.final-foot{ opacity:0; text-align:center; }
-  .final-body{ font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(16px,4vw,20px); line-height:1.85; }
-  .final-sign{ font-family:'Dancing Script',cursive; font-weight:700; font-size:clamp(20px,5vw,26px); color:var(--pink); }
-  .final-foot{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(12px,3.2vw,14px); color:var(--mist); }
+  .final-body{ font-family:'Tiro Devanagari Hindi',serif; font-weight:500; font-size:clamp(16px,4vw,20px); line-height:1.85; }
+  .final-sign{ font-family:'Kalam','Tiro Devanagari Hindi',cursive; font-weight:700; font-size:clamp(20px,5vw,26px); color:var(--pink); }
+  .final-foot{ font-family:'Tiro Devanagari Hindi',serif; font-style:italic; font-size:clamp(12px,3.2vw,14px); color:var(--mist); }
   .final-body.show{ animation:fadeFull .8s ease .5s forwards; }
   .final-sign.show{ animation:fadeFull .8s ease .85s forwards; }
   .final-foot.show{ animation:fadeFull 1s ease 1.2s forwards; }
@@ -162,13 +162,13 @@
   <div class="diya-row" id="diyaRow"></div>
 
   <section class="scene" id="cover">
-    <div class="eyebrow">a letter, written under the same sky you're under</div>
+    <div class="eyebrow">एक पत्र, उसी आकाश के नीचे लिखा गया जिसके नीचे तुम हो</div>
     <div class="orb-wrap" id="orbWrap">
       <div class="orb"><div class="ring"></div><div class="ring r2"></div><span class="owl">🦉</span></div>
     </div>
-    <h1 class="title-script">for ullu aarohi shrivastav ji</h1>
-    <p class="subtitle">close everything else for a minute. this one's just for you.</p>
-    <div><button class="btn" id="openBtn">read it</button></div>
+    <h1 class="title-script">उल्लू आरोही श्रीवास्तव जी के लिए</h1>
+    <p class="subtitle">शेष सब कुछ एक पल के लिए बंद कर दो। यह केवल तुम्हारे लिए है।</p>
+    <div><button class="btn" id="openBtn">पढ़ो</button></div>
   </section>
 
   <section class="scene hidden" id="clockScene">
@@ -181,39 +181,40 @@
         <line class="hand hand-min" x1="70" y1="70" x2="70" y2="26" stroke="#FF9EDB" stroke-width="2.5" stroke-linecap="round"/>
       </svg>
     </div>
-    <p class="clock-caption show d1">this was supposed to arrive at midnight.</p>
-    <p class="clock-caption show d2">but I kept rewriting it, wanting the words to be good enough for you — so it waited a little, the way good things do.</p>
-    <div class="clock-btn-wrap"><button class="btn" id="clockNextBtn">so here it is, a little late</button></div>
+    <p class="clock-caption show d1">यह मध्यरात्रि को पहुँचना था।</p>
+    <p class="clock-caption show d2">पर इसे बार-बार सँवारा गया, ताकि शब्द तुम्हारे योग्य हों — इसलिए यह थोड़ी देर ठहर गया, जैसे अच्छी चीज़ें ठहर जाती हैं।</p>
+    <div class="clock-btn-wrap"><button class="btn" id="clockNextBtn">तो लो, थोड़ी देर से ही सही</button></div>
   </section>
 
   <section class="scene hidden" id="letterScene">
     <div class="glow"></div>
     <div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
     <div class="page">
-      <div class="page-mark" id="pageMark">page 1</div>
+      <div class="page-mark" id="pageMark">पृष्ठ १</div>
       <div class="page-text" id="pageText"></div>
     </div>
-    <div class="hint" id="hint">tap to keep reading</div>
+    <div class="hint" id="hint">आगे पढ़ने के लिए छुओ</div>
   </section>
 </div>
 
 <script>
 (function(){
-  const NAME = "ullu aarohi shrivastav ji";
+  const NAME = "उल्लू आरोही श्रीवास्तव जी";
+  const dv = n => String(n).replace(/\d/g, d => "०१२३४५६७८९"[d]);
   const pages = [
-    "My " + NAME + "…",
-    "before the day gets busy with everyone else's wishes —",
-    "I wanted mine to reach you first, quietly, like this.",
-    "I still remember when you were someone I was just <span class=\"accent\">getting to know</span>.",
-    "and somehow, without either of us really noticing it happen —",
-    "you became my best friend.",
-    "the one with the silly, endless conversations,",
-    "the one whose name makes my screen light up a little brighter.",
-    "and every year from here — I don't just want to wish you happy birthday.",
-    "I want to <span class=\"accent2\">celebrate you</span>, for as long as you'll let me.",
-    "so today, close your eyes for me.",
-    "let every diya on this little sky be a reason I'm grateful for you.",
-    "happy birthday, " + NAME + "."
+    "मेरी " + NAME + "…",
+    "दिन में सबकी शुभकामनाओं की भीड़ होने से पहले —",
+    "मेरी शुभकामना तुम तक सबसे पहले पहुँचे, चुपचाप, ऐसे ही।",
+    "एक समय था जब तुम बस एक <span class=\"accent\">नई पहचान</span> थीं।",
+    "और जाने कब, हम दोनों के जाने बिना —",
+    "तुम मेरी सबसे अच्छी मित्र बन गईं।",
+    "जिसके साथ अनगिनत बेतुकी बातें होती हैं,",
+    "जिसका नाम स्क्रीन पर आते ही मन थोड़ा और खिल उठता है।",
+    "और अब हर वर्ष — केवल जन्मदिन की बधाई देना ही नहीं,",
+    "जब तक तुम साथ दो, तुम्हारा <span class=\"accent2\">उत्सव मनाने</span> की इच्छा है।",
+    "तो आज, मेरे लिए अपनी आँखें बंद करो।",
+    "इस नन्हे आकाश का हर दीपक, तुम्हारे होने के लिए एक आभार हो।",
+    "जन्मदिन की हार्दिक शुभकामनाएँ, " + NAME + "।"
   ];
   const $ = id => document.getElementById(id);
   const stage = $('stage');
@@ -298,7 +299,7 @@
   function renderPage(){
     progressFill.style.width = (((index+1)/total)*100)+'%';
     if(index < pages.length){
-      pageMark.textContent = `page ${index+1} of ${pages.length}`;
+      pageMark.textContent = `पृष्ठ ${dv(index+1)} / ${dv(pages.length)}`;
       if(diyaEls[index]) diyaEls[index].classList.add('lit');
       typeLine(pages[index]);
     } else renderFinal();
@@ -320,10 +321,10 @@
     wrap.innerHTML = `
       <div class="glow-ring"></div>
       <div class="final-owl">🦉</div>
-      <div class="final-title" id="ft">Happy Birthday, Ullu Aarohi Shrivastav Ji</div>
-      <div class="final-body" id="fb">may this year be soft on you — full of laughter, sound sleep, and every small joy you never have to ask for twice. and may I get to be right there cheering for you through all of it, today and every year after.</div>
-      <div class="final-sign" id="fs">your friend, always 🦉</div>
-      <div class="final-foot" id="ff">late by the clock. never late by the heart.</div>`;
+      <div class="final-title" id="ft">जन्मदिन की हार्दिक शुभकामनाएँ, उल्लू आरोही श्रीवास्तव जी</div>
+      <div class="final-body" id="fb">यह वर्ष तुम पर कोमल रहे — हँसी, गहरी नींद और उन छोटी-छोटी खुशियों से भरा, जो तुम्हें दो बार माँगनी न पड़ें। और इन सबमें तुम्हारे साथ खड़े होकर तुम्हारा उत्साह बढ़ाने का सौभाग्य मिले — आज और हर वर्ष।</div>
+      <div class="final-sign" id="fs">सदा तुम्हारे साथ 🦉</div>
+      <div class="final-foot" id="ff">घड़ी से देर हुई, हृदय से कभी नहीं।</div>`;
     letterScene.appendChild(wrap);
     requestAnimationFrame(()=>['ft','fb','fs','ff'].forEach(id=>$(id).classList.add('show')));
     diyaEls.forEach(d=>d.classList.add('lit'));
