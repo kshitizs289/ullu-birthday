@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
-<title>for my wifeyy 🌙</title>
+<title>for my ullu aarohi 🦉</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -30,7 +30,6 @@
 
   .stage{ position:relative; width:100%; height:100%; overflow:hidden; }
 
-  /* ---------- stars ---------- */
   .stars{ position:absolute; inset:0; z-index:1; pointer-events:none; }
   .star{ position:absolute; background: var(--gold-soft); border-radius:50%; animation: twinkle ease-in-out infinite; }
   @keyframes twinkle{ 0%,100%{ opacity:.25; transform:scale(1); } 50%{ opacity:1; transform:scale(1.4); } }
@@ -51,7 +50,6 @@
   }
   @keyframes moonBreathe{ 0%,100%{ transform:scale(1); opacity:.85; } 50%{ transform:scale(1.06); opacity:1; } }
 
-  /* ---------- diyas along the base ---------- */
   .diya-row{ position:absolute; bottom:0; left:0; right:0; height:70px; display:flex; align-items:flex-end; justify-content:center; gap:clamp(10px,3vw,26px); z-index:3; pointer-events:none; padding-bottom:10px; }
   .diya{ width:20px; height:14px; position:relative; opacity:.28; transition: opacity .6s ease; }
   .diya.lit{ opacity:1; }
@@ -61,7 +59,6 @@
   @keyframes diyaFlicker{ 0%{ transform: translateX(-50%) scaleY(1) rotate(-3deg);} 50%{ transform: translateX(-50%) scaleY(1.15) rotate(3deg);} 100%{ transform: translateX(-50%) scaleY(0.92) rotate(-2deg);} }
   .diya.lit .diya-bowl{ box-shadow: 0 0 16px 4px rgba(255,155,74,0.5); }
 
-  /* ---------- scenes ---------- */
   .scene{
     position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
     gap:clamp(16px,3.6vw,28px); padding: 30px 24px 90px; z-index:6;
@@ -71,13 +68,14 @@
 
   .eyebrow{ font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; letter-spacing:.08em; font-size: clamp(13px,3.4vw,15px); color: var(--mist); text-align:center; }
 
-  .locket{ position:relative; width: clamp(120px,30vw,160px); height: clamp(120px,30vw,160px); transition: transform .8s ease, opacity .6s ease; }
-  .locket svg{ width:100%; height:100%; filter: drop-shadow(0 0 22px rgba(244,200,107,0.35)); }
+  .locket{ position:relative; width: clamp(120px,30vw,160px); height: clamp(120px,30vw,160px); transition: transform .8s ease, opacity .6s ease; display:flex; align-items:center; justify-content:center; }
+  .locket svg{ position:absolute; inset:0; width:100%; height:100%; filter: drop-shadow(0 0 22px rgba(244,200,107,0.35)); }
+  .locket .owl{ position:relative; font-size: clamp(48px,12vw,64px); }
   .locket-wrap.opening .locket{ transform: scale(1.08) rotate(3deg); }
   .locket-wrap.flyaway .locket{ transform: translateY(-40px) scale(0.7); opacity:0; }
 
-  .title-script{ font-family:'Dancing Script', cursive; font-weight:700; font-size: clamp(30px,8vw,52px); text-align:center; color: var(--gold-soft); line-height:1.25; text-shadow: 0 0 24px rgba(244,200,107,0.35); }
-  .subtitle{ font-family:'Cormorant Garamond', serif; font-size: clamp(15px,4vw,19px); color: var(--mist); text-align:center; max-width:420px; }
+  .title-script{ font-family:'Dancing Script', cursive; font-weight:700; font-size: clamp(30px,8vw,52px); text-align:center; color: var(--gold-soft); line-height:1.25; text-shadow: 0 0 24px rgba(244,200,107,0.35); margin:0; }
+  .subtitle{ font-family:'Cormorant Garamond', serif; font-size: clamp(15px,4vw,19px); color: var(--mist); text-align:center; max-width:420px; margin:0; }
 
   .btn{
     font-family:'Cormorant Garamond', serif; font-weight:600; font-size:18px; letter-spacing:.04em;
@@ -89,7 +87,6 @@
   .btn:active{ transform: translateY(0) scale(0.97); }
   .btn:focus-visible{ outline:2px solid var(--gold-soft); outline-offset:3px; }
 
-  /* ---------- heartbeat glow living behind the letter ---------- */
   .heartbeat-glow{
     position:absolute; left:50%; top:50%; width:340px; height:340px; margin:-170px 0 0 -170px;
     border-radius:50%; background: radial-gradient(circle, rgba(240,137,155,0.10), transparent 70%);
@@ -103,7 +100,6 @@
     70%{ transform: scale(1); opacity:.55; }
   }
 
-  /* ---------- clock interstitial: why the gift is a little late ---------- */
   .clock-wrap{ position:relative; width: clamp(110px,26vw,140px); height: clamp(110px,26vw,140px); opacity:0; }
   .clock-wrap.show{ animation: fadeIn 1s ease .1s forwards; }
   .clock-wrap svg{ width:100%; height:100%; filter: drop-shadow(0 0 18px rgba(244,200,107,0.3)); }
@@ -114,13 +110,12 @@
   .clock-wrap.show .hand-min{ animation: minSweep 3.4s cubic-bezier(.45,0,.2,1) forwards; }
   @keyframes hourSweep{ 0%{ transform: rotate(255deg); } 100%{ transform: rotate(360deg); } }
   @keyframes minSweep{ 0%{ transform: rotate(60deg); } 100%{ transform: rotate(760deg); } }
-  .clock-caption{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size: clamp(15px,4vw,19px); color: var(--mist); text-align:center; max-width:380px; opacity:0; line-height:1.7; }
+  .clock-caption{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size: clamp(15px,4vw,19px); color: var(--mist); text-align:center; max-width:380px; opacity:0; line-height:1.7; margin:0; }
   .clock-caption.show{ animation: fadeIn .9s ease forwards; }
   .clock-caption.delay1{ animation-delay: 2.4s; }
   .clock-caption.delay2{ animation-delay: 3.6s; }
   .clock-btn-wrap{ opacity:0; animation: fadeIn .9s ease 4.8s forwards; }
 
-  /* ---------- letter page ---------- */
   .progress-wrap{ position:absolute; top:0; left:0; right:0; padding:16px 20px 0; z-index:20; }
   .progress-track{ width:100%; height:2px; background: rgba(244,200,107,0.15); }
   .progress-fill{ height:100%; width:0%; background: var(--gold-soft); transition: width .5s ease; }
@@ -140,7 +135,6 @@
   .hint.show{ animation: fadeIn .6s ease .3s forwards; }
   @keyframes fadeIn{ to{ opacity:.6; } }
 
-  /* ---------- final scene ---------- */
   .final-wrap{ display:flex; flex-direction:column; align-items:center; gap:18px; max-width:600px; }
   .final-heart{ font-size: clamp(38px,10vw,56px); opacity:0; animation: heartIn .8s cubic-bezier(.34,1.56,.64,1) forwards; }
   @keyframes heartIn{ 0%{ opacity:0; transform: scale(.4); } 60%{ transform: scale(1.15); } 100%{ opacity:1; transform: scale(1); } }
@@ -170,7 +164,7 @@
   <div class="moon"></div>
   <div class="diya-row" id="diyaRow"></div>
 
-  <!-- ============ COVER ============ -->
+  <!-- COVER -->
   <section class="scene" id="cover">
     <div class="eyebrow">a letter, written under the same sky you're under</div>
 
@@ -185,12 +179,12 @@
           </defs>
           <circle cx="70" cy="70" r="52" fill="none" stroke="url(#lg)" stroke-width="3"/>
           <circle cx="70" cy="70" r="40" fill="none" stroke="url(#lg)" stroke-width="1.5" opacity="0.6"/>
-          <path d="M70 46 C58 34 40 40 40 58 C40 76 70 98 70 98 C70 98 100 76 100 58 C100 40 82 34 70 46 Z" fill="url(#lg)" opacity="0.9"/>
         </svg>
+        <span class="owl">🦉</span>
       </div>
     </div>
 
-    <h1 class="title-script">for my wifeyy</h1>
+    <h1 class="title-script">for my ullu aarohi</h1>
     <p class="subtitle">close everything else for a minute. this one's just for you.</p>
 
     <div>
@@ -198,7 +192,7 @@
     </div>
   </section>
 
-  <!-- ============ CLOCK INTERSTITIAL ============ -->
+  <!-- CLOCK INTERSTITIAL -->
   <section class="scene hidden" id="clockScene">
     <div class="heartbeat-glow"></div>
     <div class="clock-wrap" id="clockWrap">
@@ -210,13 +204,13 @@
       </svg>
     </div>
     <p class="clock-caption show delay1">this was supposed to arrive at midnight.</p>
-    <p class="clock-caption show delay2">but you looked at me, sick and half-asleep, and told me to rest instead — so it waited, the way only something that loves you would.</p>
+    <p class="clock-caption show delay2">but I kept rewriting it, wanting the words to be good enough for you — so it waited a little, the way good things do.</p>
     <div class="clock-btn-wrap">
       <button class="btn" id="clockNextBtn">so here it is, a little late</button>
     </div>
   </section>
 
-  <!-- ============ LETTER SCENE ============ -->
+  <!-- LETTER -->
   <section class="scene hidden" id="letterScene">
     <div class="heartbeat-glow"></div>
     <div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
@@ -230,25 +224,22 @@
 
 <script>
 (function(){
-  // ===================== LETTER CONTENT =====================
-  // Each entry is typed out letter-by-letter, like handwriting.
   const pages = [
-    "My wifeyy…",
+    "My ullu aarohi…",
     "before the day gets busy with everyone else's wishes —",
     "I wanted mine to reach you first, quietly, like this.",
     "I still remember when you were someone I was just <span class=\"accent\">getting to know</span>.",
     "and somehow, without either of us really noticing it happen —",
-    "you became the person I built my whole life's plans around.",
-    "we found each other through the same faith, the same Laddu ji,",
-    "the same quiet mornings and the same silly, endless conversations.",
-    "and every year from here — I don't just get to wish you happy birthday.",
-    "I get to <span class=\"accent2\">celebrate you</span>, as mine, for the rest of ours.",
+    "you became my best friend.",
+    "the one with the silly, endless conversations,",
+    "the one whose name makes my screen light up a little brighter.",
+    "and every year from here — I don't just want to wish you happy birthday.",
+    "I want to <span class=\"accent2\">celebrate you</span>, for as long as you'll let me.",
     "so today, close your eyes for me.",
-    "let every diya on this little sky be a year I get to love you.",
-    "happy birthday, wifeyy."
+    "let every diya on this little sky be a reason I'm grateful for you.",
+    "happy birthday, ullu aarohi."
   ];
 
-  // ===================== STARFIELD =====================
   const starsEl = document.getElementById('stars');
   const starCount = window.innerWidth < 600 ? 40 : 65;
   for(let i=0;i<starCount;i++){
@@ -275,7 +266,6 @@
   }
   let shootTimer = setInterval(shootingStar, 4200);
 
-  // ===================== DIYA ROW =====================
   const diyaRow = document.getElementById('diyaRow');
   const totalDiyas = 13;
   for(let i=0;i<totalDiyas;i++){
@@ -289,7 +279,6 @@
     if(diyaEls[i]) diyaEls[i].classList.add('lit');
   }
 
-  // ===================== OPEN COVER =====================
   const openBtn = document.getElementById('openBtn');
   const locketWrap = document.getElementById('locketWrap');
   const cover = document.getElementById('cover');
@@ -317,12 +306,11 @@
     renderPage();
   });
 
-  // ===================== TYPEWRITER RENDER =====================
   const pageText = document.getElementById('pageText');
   const pageMark = document.getElementById('pageMark');
   const progressFill = document.getElementById('progressFill');
   const hint = document.getElementById('hint');
-  const total = pages.length + 1; // +1 final scene
+  const total = pages.length + 1;
   let index = 0;
   let typing = false;
   let typeTimer = null;
@@ -359,7 +347,6 @@
 
   function renderPage(){
     progressFill.style.width = (((index+1)/total)*100) + '%';
-
     if(index < pages.length){
       pageMark.textContent = `page ${index+1} of ${pages.length}`;
       lightDiya(index);
@@ -387,7 +374,6 @@
     next();
   });
 
-  // ===================== FINAL SCENE =====================
   function renderFinal(){
     clearInterval(shootTimer);
     const page = document.querySelector('.page');
@@ -400,12 +386,12 @@
     wrap.className = 'final-wrap';
     wrap.innerHTML = `
       <div class="glow-ring"></div>
-      <div class="final-heart">🪷</div>
-      <div class="final-title" id="finalTitle">Happy Birthday, Wifeyy</div>
+      <div class="final-heart">🦉</div>
+      <div class="final-title" id="finalTitle">Happy Birthday, Ullu Aarohi</div>
       <div class="final-body" id="finalBody">
-        may Krishna ji keep this year soft on you — full of laughter, sound sleep, and every small joy you never have to ask for twice. and may I get to be the one standing next to you for all of it, wifeyy, today and every year after.
+        may this year be soft on you — full of laughter, sound sleep, and every small joy you never have to ask for twice. and may I get to be right there cheering for you through all of it, today and every year after.
       </div>
-      <div class="final-sign" id="finalSign">forever yours 🌙</div>
+      <div class="final-sign" id="finalSign">your friend, always 🦉</div>
       <div class="final-footnote" id="finalFootnote">late by the clock. never late by the heart.</div>
     `;
     letterScene.appendChild(wrap);
